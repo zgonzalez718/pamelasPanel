@@ -9,8 +9,24 @@
     <input type="submit" value="Add new cohort" />
 </form> 
 
-<% for items in Cohort.all.reverse do%>
-    <p> <%= items.name %>  <%= items.start %> <%= items.end %>
-    </p>
-
+    <table class="primary">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start l</th>
+        <th>Ends </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for items in Cohort.all.reverse do%>
+      <tr>
+        <td><%= items.name %></td>
+        <td><%= items.start%> </td>
+        <td><%= items.end %>  </td>
+        <td> <a href="/dashboard/CohortInfo">view all cohort info</a> </td>
+      </tr>
+    </tbody>
     <% end %>
+  </table>
+ 

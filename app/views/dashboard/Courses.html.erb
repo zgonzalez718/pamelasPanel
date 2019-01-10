@@ -7,8 +7,23 @@
     <input type="submit" value="Add new course" />
 </form> 
 
-<% for items in Course.all.reverse do%>
-    <p> <%= items.name %>  <%= items.duration %> 
-    </p>
-
+    <table class="primary">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Description</th>
+        <th>-</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for items in Course.all.reverse do%>
+      <tr>
+        <td><%= items.name %></td>
+        <td><%= items.duration%> </td>
+        <td> view  </td>
+        <td> #deletebutton </td>
+      </tr>
+    </tbody>
     <% end %>
+  </table>

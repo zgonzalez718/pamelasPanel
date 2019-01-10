@@ -1,0 +1,27 @@
+
+<p>list of all instructors</p>
+
+<table class="primary">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Course</th>
+    <th>Education Level</th>
+    <th>Age </th>
+    <th>Salary</th>
+    <th>-</th>
+  </tr>
+</thead>
+<tbody>
+<% for items in Instructor.all.reverse do%>
+  <tr>
+    <td><%= items.f_name %>  <%= items.l_name %></td>
+    <td> <a href="/instructors/<%= items.id %>">subject student & cohort</a></td>
+    <td><%= items.edu_level%> </td>
+    <td><%= items.age %>  </td>
+    <td><%= items.salary %> $ </td>
+    <td> #deletebutton </td>
+  </tr>
+</tbody>
+<% end %>
+</table>

@@ -1,6 +1,8 @@
 class DashboardController < ApplicationController
-  def Students
-    @student = Student.all
+  def Students  
+  end
+
+  def StudentInfo
   end
 
   def Instructors

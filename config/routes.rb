@@ -1,9 +1,25 @@
 Rails.application.routes.draw do
-  get 'dashboard/Students'
-  get 'dashboard/Instructors'
-  get 'dashboard/Courses'
-  get 'dashboard/Cohort'
+  #get 'dashboard/Students'
+    resources :students
+
+  #get 'dashboard/Instructors'
+    resources :instructors
+
+  #get 'dashboard/Courses'
+    resources :courses
+
+  #get 'dashboard/Cohort'
+    resources :cohort
+
   get 'dashboard/login'
+
+  #get 'dashboard/StudentInfo/:id'
+
+  #get 'dashboard/CohortInfo'
+    # resources :cohortInfo
+
+  #get 'dashboard/CourseInfo'
+    # resources :courseInfo
 
   post '/dashboard/Students' => 'students#create'
   post '/dashboard/Cohort' => 'cohorts#create'

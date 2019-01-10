@@ -10,4 +10,8 @@ class CoursesController < ApplicationController
         redirect_to '/dashboard/Courses'
 
     end
+
+    def show
+        @courses = Course.find_by_id(params[:id])
+    end 
 end

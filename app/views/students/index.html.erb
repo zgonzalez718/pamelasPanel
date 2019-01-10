@@ -1,0 +1,37 @@
+<h1>Students</h1>
+
+
+
+<form action="/dashboard/Students" method="POST">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    <input type="text" name="f_name" placeholder="First Name" required>
+    <input type="text" name="l_name" placeholder="Last Name" required>
+    <input type="text" name="edu_level" placeholder="Education Level" required>
+    <input type="text" name="age" placeholder="Age" required>
+    <input type="submit" value="Add new student" />
+</form> 
+
+
+    <table class="primary">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Education Level</th>
+        <th>Age </th>
+        <th></th>
+        <th>-</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% for items in Student.all.reverse do%>
+      <tr>
+        <td><%= items.f_name %>  <%= items.l_name %></td> 
+        <td><%= items.edu_level%> </td>
+        <td><%= items.age %>  </td>
+        <td> <a href="/students/<%= items.id %>">view info</a></td>
+        <td> #deletebutton </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+ 
