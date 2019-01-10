@@ -6,13 +6,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://unpkg.com/picnic">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <FORM METHOD="LINK" ACTION="/dashboard/index">
+  <FORM METHOD="LINK" ACTION="/">
 <INPUT TYPE="submit" VALUE="HOME">
-</FORM>
+  </FORM>
     <%= yield %>
   </body>
 </html>

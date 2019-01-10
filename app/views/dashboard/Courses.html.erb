@@ -1,1 +1,14 @@
 <p> this page will contain a table with a all the couses offered. along with possibly a description </p>
+
+<form action="/dashboard/Courses" method="POST">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="duration" placeholder="Duration" required>
+    <input type="submit" value="Add new course" />
+</form> 
+
+<% for items in Course.all.reverse do%>
+    <p> <%= items.name %>  <%= items.duration %> 
+    </p>
+
+    <% end %>

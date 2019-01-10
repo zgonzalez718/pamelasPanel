@@ -1,2 +1,16 @@
 
 <p> a table with the cohort name and their start/ending date </p>
+
+<form action="/dashboard/Cohort" method="POST">
+    <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="start" placeholder="Start" required>
+    <input type="text" name="end" placeholder="End" required>
+    <input type="submit" value="Add new cohort" />
+</form> 
+
+<% for items in Cohort.all.reverse do%>
+    <p> <%= items.name %>  <%= items.start %> <%= items.end %>
+    </p>
+
+    <% end %>
